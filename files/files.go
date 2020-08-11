@@ -114,7 +114,10 @@ func Upload(c *gin.Context) {
 				return
 			}
 
-			cmd := exec.Command("/home/kot/CovertIFCtoGLTF/IfcConvert " + "--use-element-guids " + fmt.Sprintf("public/%s/%s", folder, file.Filename) + " " + fmt.Sprintf("public/%s/%s", folder, strings.Replace(file.Filename, "ifc", "dae", 1)))
+			//cmd := exec.Command("/home/kot/CovertIFCtoGLTF/IfcConvert " + "--use-element-guids " + fmt.Sprintf("public/%s/%s", folder, file.Filename) + " " + fmt.Sprintf("public/%s/%s", folder, strings.Replace(file.Filename, "ifc", "dae", 1)))
+
+			cmd := exec.Command("/home/kot/CovertIFCtoGLTF/IfcConvert ")
+
 			print(cmd.Output())
 			paths = append(paths, fmt.Sprintf("public/%s/%s", folder, strings.Replace(file.Filename, "ifc", "dae", 1)))
 
@@ -131,7 +134,8 @@ func Upload(c *gin.Context) {
 				return
 			}
 
-			cmd := exec.Command("/home/kot/CovertIFCtoGLTF/IfcConvert " + "--use-element-guids" + fmt.Sprintf("public/%s/%s/%s", folder, subfolder, file.Filename) + " " + fmt.Sprintf("public/%s/%s/%s", folder, subfolder, strings.Replace(file.Filename, "ifc", "dae", 1)))
+			//cmd := exec.Command("/home/kot/CovertIFCtoGLTF/IfcConvert " + "--use-element-guids" + fmt.Sprintf("public/%s/%s/%s", folder, subfolder, file.Filename) + " " + fmt.Sprintf("public/%s/%s/%s", folder, subfolder, strings.Replace(file.Filename, "ifc", "dae", 1)))
+			cmd := exec.Command("/home/kot/CovertIFCtoGLTF/IfcConvert ")
 			print(cmd.Output())
 
 			paths = append(paths, fmt.Sprintf("/file/%s/%s/%s", folder, subfolder, strings.Replace(file.Filename, "ifc", "dae", 1)))
