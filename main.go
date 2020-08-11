@@ -1,7 +1,7 @@
 package main
 
 import (
-	routes "PortalMGTNIIP/routes"
+	routes "CovertIFCtoGLTF/routes"
 	"log"
 	_ "os"
 
